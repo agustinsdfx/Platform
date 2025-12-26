@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL.DB - Platform Database V1.0</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2111/2111425.png">
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-panel: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent: #bb86fc;
+            --accent-plat: #03dac6;
+            --accent-mod: #ff7597;
+            --border: #333;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: 0.2s; cursor: pointer; }
+        ul { list-style: none; }
+
+        header { background-color: var(--bg-panel); border-bottom: 1px solid var(--border); padding: 0.75rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); display: flex; align-items: center; gap: 10px; cursor: pointer; }
+        .logo span { background: var(--accent); color: #000; padding: 2px 8px; border-radius: 4px; }
+        
+        nav { position: absolute; left: 50%; transform: translateX(-50%); }
+        nav ul { display: flex; gap: 20px; align-items: center; }
+        nav a:hover, nav a.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+        
+        .search-bar input { background: #000; border: 1px solid var(--border); padding: 8px 12px; border-radius: 4px; color: white; width: 250px; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 250px 1fr; gap: 30px; }
+        
+        aside .widget { background: var(--bg-panel); padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--border); }
+        aside h3 { border-bottom: 2px solid var(--accent); padding-bottom: 5px; margin-bottom: 15px; font-size: 1rem; text-transform: uppercase; }
+        aside li { padding: 8px 0; border-bottom: 1px solid #333; font-size: 0.9rem; cursor: pointer; display: flex; justify-content: space-between; }
+        aside li:hover { color: var(--accent); padding-left: 5px; }
+
+        .ver-box { text-align: center; }
+        .ver-display { background: #111; padding: 12px; border: 1px solid #333; border-radius: 6px; margin-bottom: 12px; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); }
+        .ver-text { color: var(--accent-plat); font-weight: 800; font-size: 1.2rem; letter-spacing: 0.5px; }
+        .btn-ver-dl { display: block; width: 100%; background: var(--accent); color: #000; font-weight: bold; padding: 10px; border-radius: 4px; margin-bottom: 10px; text-transform: uppercase; font-size: 0.85rem; }
+        .btn-ver-dl:hover { background: #9955e8; transform: scale(1.02); }
+        .btn-ver-more { display: block; width: 100%; border: 1px solid #444; color: #888; font-size: 0.8rem; padding: 8px; border-radius: 4px; text-transform: uppercase; }
+        .btn-ver-more:hover { border-color: var(--accent); color: var(--accent); background: rgba(187, 134, 252, 0.05); }
+
+        .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); position: relative; height: 180px; border-radius: 8px; display: flex; align-items: flex-end; padding: 30px; margin-bottom: 30px; border: 1px solid var(--border); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fnewrelic.com%2Fsites%2Fdefault%2Ffiles%2F2021-04%2Fgood-programmer-banner-final.jpg&sp=1766611851T022e16cfe17989e87062ed7cba3637db854de5e1fe38b8595c5b0d646e6a81b8') center/cover; opacity: 0.3; }
+        .hero-content { position: relative; z-index: 2; }
+        
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .btn-main { background: var(--accent); color: black; padding: 8px 16px; border-radius: 4px; font-weight: bold; border: none; cursor: pointer; }
+        .btn-main:hover { background: #9955e8; }
+
+        .mod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .mod-card { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: transform 0.2s; display: flex; flex-direction: column; }
+        .mod-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .mod-img { height: 150px; background-color: #333; background-size: cover; background-position: center; border-bottom: 1px solid #333; }
+        .mod-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+        
+        .tags-container { display: flex; gap: 5px; margin-bottom: 10px; font-size: 0.65rem; font-weight: bold; text-transform: uppercase; flex-wrap: wrap; }
+        
+        .tag { padding: 3px 6px; border-radius: 3px; color: #000; }
+        .tag-cat { background: #ddd; }
+        .tag-mod { background: var(--accent-mod); }
+        .tag-plat { background: var(--accent-plat); }
+
+        .mod-title { font-weight: bold; margin-bottom: 5px; font-size: 1.15rem; color: white; }
+        .mod-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; flex-grow: 1; }
+        .mod-meta { font-size: 0.75rem; color: #888; display: flex; justify-content: space-between; padding-top: 10px; border-top: 1px solid #333; align-items: center; }
+        .btn-get { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; font-weight: bold; transition: 0.2s; }
+        .btn-get:hover { background: var(--accent); color: black; }
+
+        .community-section { display: none; }
+        .post-card { background: var(--bg-panel); border: 1px solid var(--border); padding: 20px; margin-bottom: 15px; border-radius: 8px; }
+        .post-header { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .post-user { color: var(--accent); font-weight: bold; }
+
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: var(--bg-panel); padding: 25px; border-radius: 8px; width: 500px; border: 1px solid var(--accent); position: relative; max-height: 90vh; overflow-y: auto; }
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; background: #111; border: 1px solid #444; color: white; border-radius: 4px; font-family: inherit; }
+
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } .hero { display: none; } header { flex-direction: column; gap: 10px; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" onclick="switchTab('mods')"><span>PL</span>.DB</div>
+        <nav>
+            <ul>
+                <li><a href="https://github.com/agustinsdfx/Platform-Windows-SDFX-Engine-Raylib" target="_blank">Github ↗</a></li>
+                <li><a id="nav-mods" class="active" onclick="switchTab('mods')">Contenido</a></li>
+                <li><a id="nav-com" onclick="switchTab('comunidad')">Comunidad</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar..." onkeyup="searchMods()">
+        </div>
+    </header>
+
+    <div class="container">
+        <aside>
+            <div class="widget">
+                <h3>Categorías</h3>
+                <ul>
+                    <li onclick="filterByCategory('all')">📚 Ver Todo</li>
+                    <li onclick="filterByCategory('Juegos')">🎮 Juegos</li>
+                    <li onclick="filterByCategory('Mods')">⚙️ Mods</li>
+                    <li onclick="filterByCategory('Mapas')">🗺️ Mapas</li>
+                    <li onclick="filterByCategory('Texturas')">🎨 Texturas</li>
+                    <li onclick="filterByCategory('Scripts')">📜 Scripts</li>
+                    <li onclick="filterByCategory('Herramientas')">🔧 Herramientas</li>
+                </ul>
+            </div>
+            
+            <div class="widget">
+                <h3>Estadísticas</h3>
+                <ul>
+                    <li>Archivos: <span id="stat-files" style="color:white">0</span></li>
+                    <li>Descargas: <span id="stat-dls" style="color:white">0</span></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>Versiones</h3>
+                <div class="ver-box">
+                    <div class="ver-display">
+                        <span class="ver-text">Platform 1.1.OR</span>
+                    </div>
+                    <a href="https://github.com/agustinsdfx/Platform-Windows-SDFX-Engine-Raylib/releases/download/v1.1.OR/Platform.1.1.OR.x86_64.setup.exe" target="_blank" class="btn-ver-dl">
+                        Descargar ⬇
+                    </a>
+                    <a href="https://github.com/agustinsdfx/Platform-Windows-SDFX-Engine-Raylib/releases" class="btn-ver-more">
+                        Ver más versiones
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div id="view-mods">
+                <section class="hero">
+                    <div class="hero-content">
+                        <h2 style="font-size: 2.5rem; text-shadow: 0 4px 6px rgba(0,0,0,0.5);">Platform Database</h2>
+                        <p style="font-size: 1.1rem; color: #ccc;">Repositorio Oficial v1.0</p>
+                    </div>
+                </section>
+                <div class="section-header">
+                    <h2 id="grid-title">Todo</h2>
+                    <button class="btn-main" onclick="openModal()">+ Subir Contenido (Local)</button>
+                </div>
+                <div class="mod-grid" id="modGrid"></div>
+            </div>
+
+            <div id="view-community" class="community-section">
+                <div class="section-header"><h2>Comunidad</h2></div>
+                <div class="post-card">
+                    <h3 style="margin-bottom:10px;">Publicar</h3>
+                    <input type="text" id="postUser" placeholder="Tu Nombre" style="width:100%; padding:8px; margin-bottom:10px; background:#000; border:1px solid #333; color:#fff;">
+                    <textarea id="postContent" rows="3" placeholder="Escribe algo..." style="width:100%; padding:8px; margin-bottom:10px; background:#000; border:1px solid #333; color:#fff;"></textarea>
+                    <button class="btn-main" onclick="addPost()">Publicar (Local)</button>
+                </div>
+                <div id="communityFeed"></div>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 style="margin-bottom:20px; color:var(--accent);">Subir Contenido (Local)</h2>
+            <form id="uploadForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Título</label>
+                        <input type="text" id="mTitle" required placeholder="Ej: Mega Pack">
+                    </div>
+                    <div class="form-group">
+                        <label>Categoría</label>
+                        <select id="mCategory">
+                            <option value="Juegos">Juego</option>
+                            <option value="Mods">Mod</option>
+                            <option value="Mapas">Mapa</option>
+                            <option value="Texturas">Textura</option>
+                            <option value="Scripts">Script</option>
+                            <option value="Herramientas">Herramienta</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label style="color:var(--accent-mod)">Versión del Mod</label>
+                        <input type="text" id="mModVer" required placeholder="Ej: v1.0, Final">
+                    </div>
+                    <div class="form-group">
+                        <label style="color:var(--accent-plat)">Platform Compatible</label>
+                        <input type="text" id="mPlatVer" required placeholder="Ej: Engine 2.1">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Autor</label>
+                        <input type="text" id="mAuthor" required>
+                    </div>
+                    <div class="form-group">
+                        <label>URL Imagen (Opcional)</label>
+                        <input type="url" id="mImgUrl">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label style="color:var(--accent)">URL de Descarga</label>
+                    <input type="url" id="mUrl" required placeholder="Mediafire, Mega...">
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea id="mDesc" rows="2" required></textarea>
+                </div>
+                <button type="submit" class="btn-main" style="width:100%">Publicar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const DB_KEY = 'pldb_official_v1_1';
+        
+        const defaultData = [
+            { 
+                id: 1, 
+                title: "Forest Map", 
+                category: "Mapas", 
+                modVer: "v1.0",
+                platVer: "PL v1.0.IR",
+                author: "Mapper", 
+                desc: "Mapa de bosque denso.", 
+                downloads: 150, 
+                img: "https://placehold.co/600x400/1e2a1e/03dac6?text=Forest+Map", 
+                url: "https://google.com" 
+            },
+            { 
+                id: 2, 
+                title: "HD Skins", 
+                category: "Texturas", 
+                modVer: "BETA 1", 
+                platVer: "PL v1.1.OR", 
+                author: "Artist", 
+                desc: "Skins HD para el player.", 
+                downloads: 80, 
+                img: "https://placehold.co/600x400/2a1e2a/ff7597?text=HD+Skins", 
+                url: "https://google.com" 
+            },
+            { 
+                id: 3, 
+                title: "Test Tools", 
+                category: "Herramientas", 
+                modVer: "1.5", 
+                platVer: "PL v1.1.OR", 
+                author: "Dev", 
+                desc: "Herramientas de prueba.", 
+                downloads: 45, 
+                img: "https://placehold.co/600x400/222/bb86fc?text=Tools", 
+                url: "https://google.com" 
+            }
+        ];
+
+        const defaultPosts = [
+            { user: "Admin - AGUSTINSDFX", text: "¡Bienvenidos a la versión 1.0 de PL.DB!", date: "23/12/2025" },
+            { user: "DevTeam - SDFX Grupe", text: "No olviden subir sus mods con la versión correcta.", date: "23/12/2025" },
+            { user: "Gamer1", text: "¿Alguien tiene el link de los mapas nuevos?", date: "24/12/2025" }
+        ];
+
+        let dbContent = JSON.parse(localStorage.getItem(DB_KEY + '_content')) || defaultData;
+        let dbPosts = JSON.parse(localStorage.getItem(DB_KEY + '_posts')) || defaultPosts;
+
+        const grid = document.getElementById('modGrid');
+        const modal = document.getElementById('uploadModal');
+
+        function renderContent(items) {
+            grid.innerHTML = "";
+            let totalDls = 0;
+            if(items.length === 0) grid.innerHTML = "<p style='color:#666'>Sin resultados.</p>";
+
+            items.forEach(item => {
+                const card = document.createElement('article');
+                card.className = 'mod-card';
+                card.innerHTML = `
+                    <div class="mod-img" style="background-image: url('${item.img}')"></div>
+                    <div class="mod-info">
+                        <div class="tags-container">
+                            <span class="tag tag-cat">${item.category}</span>
+                            <span class="tag tag-mod">MOD: ${item.modVer}</span>
+                            <span class="tag tag-plat">PLAT: ${item.platVer}</span>
+                        </div>
+                        <span class="mod-title">${item.title}</span>
+                        <p class="mod-desc">${item.desc}</p>
+                        <div class="mod-meta">
+                            <span>👤 ${item.author}</span>
+                            <div style="display:flex; align-items:center; gap:8px;">
+                                <span>⬇ ${item.downloads}</span>
+                                <button class="btn-get" onclick="downloadItem(${item.id})">OBTENER ➜</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+                totalDls += item.downloads;
+            });
+            document.getElementById('stat-files').innerText = dbContent.length;
+            document.getElementById('stat-dls').innerText = totalDls;
+        }
+
+        document.getElementById('uploadForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const cat = document.getElementById('mCategory').value;
+            const customImg = document.getElementById('mImgUrl').value;
+            
+            const newItem = {
+                id: Date.now(),
+                title: document.getElementById('mTitle').value,
+                category: cat,
+                modVer: document.getElementById('mModVer').value,
+                platVer: document.getElementById('mPlatVer').value,
+                author: document.getElementById('mAuthor').value,
+                desc: document.getElementById('mDesc').value,
+                url: document.getElementById('mUrl').value,
+                img: customImg ? customImg : `https://placehold.co/600x400/222/bb86fc?text=${cat.toUpperCase()}`,
+                downloads: 0
+            };
+
+            dbContent.unshift(newItem);
+            localStorage.setItem(DB_KEY + '_content', JSON.stringify(dbContent));
+            renderContent(dbContent);
+            closeModal();
+            document.getElementById('uploadForm').reset();
+            alert("¡Contenido Publicado!");
+        });
+
+        function switchTab(tab) {
+            const vMods = document.getElementById('view-mods');
+            const vCom = document.getElementById('view-community');
+            if(tab === 'mods') {
+                vMods.style.display = 'block'; vCom.style.display = 'none';
+                document.getElementById('nav-mods').classList.add('active');
+                document.getElementById('nav-com').classList.remove('active');
+                renderContent(dbContent);
+            } else {
+                vMods.style.display = 'none'; vCom.style.display = 'block';
+                document.getElementById('nav-mods').classList.remove('active');
+                document.getElementById('nav-com').classList.add('active');
+                renderPosts();
+            }
+        }
+        function filterByCategory(cat) {
+            switchTab('mods');
+            document.getElementById('grid-title').innerText = cat === 'all' ? "Todo" : cat;
+            renderContent(cat === 'all' ? dbContent : dbContent.filter(x => x.category === cat));
+        }
+        function searchMods() {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            renderContent(dbContent.filter(x => x.title.toLowerCase().includes(q) || x.desc.toLowerCase().includes(q)));
+        }
+        function downloadItem(id) {
+            const item = dbContent.find(x => x.id === id);
+            if(item) {
+                item.downloads++;
+                localStorage.setItem(DB_KEY + '_content', JSON.stringify(dbContent));
+                renderContent(dbContent);
+                if(item.url && item.url !== '#') window.open(item.url, '_blank');
+                else alert("URL inválida.");
+            }
+        }
+        function renderPosts() {
+            const feed = document.getElementById('communityFeed');
+            feed.innerHTML = "";
+            [...dbPosts].reverse().forEach(post => {
+                const div = document.createElement('div');
+                div.className = 'post-card';
+                div.innerHTML = `<div class="post-header"><span class="post-user">${post.user}</span><span>${post.date}</span></div><div>${post.text}</div>`;
+                feed.appendChild(div);
+            });
+        }
+        function addPost() {
+            const u = document.getElementById('postUser').value;
+            const t = document.getElementById('postContent').value;
+            if(!u || !t) return;
+            dbPosts.push({ user: u, text: t, date: new Date().toLocaleDateString() });
+            localStorage.setItem(DB_KEY + '_posts', JSON.stringify(dbPosts));
+            document.getElementById('postContent').value = "";
+            renderPosts();
+        }
+        function openModal() { modal.style.display = 'flex'; }
+        function closeModal() { modal.style.display = 'none'; }
+        window.onclick = (e) => { if(e.target == modal) closeModal(); }
+
+        renderContent(dbContent);
+    </script>
+</body>
+</html>
