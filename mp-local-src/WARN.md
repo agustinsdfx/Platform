@@ -1,0 +1,3 @@
+# WARN.md
+
+I'm working on a local version of Platform that supports four players with XInput controls (for Xbox controllers) and DInput controls (for PS4 and PS5 controllers), plus a keyboard, although only two players can use the same keyboard. I won't be releasing the code or any progress updates; I'm just starting this project and don't want to get bogged down. I also need to maintain compatibility with the Platform database and the original Platform project.
