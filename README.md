@@ -79,6 +79,7 @@ git clone https://github.com/raysan5/raylib.git
 cmake -S . -B ./build
 cmake --build ./build
 ```
+
 - Compile installer
 
 ```
@@ -149,6 +150,37 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+```
+
+- App details
+
+```
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEOS 0x40004
+FILETYPE 0x1
+{
+BLOCK "StringFileInfo"
+{
+	BLOCK "040904B0"
+	{
+		VALUE "FileDescription", "Just have fun"
+		VALUE "InternalName", "app.exe"
+		VALUE "OriginalFilename", "Platform.exe"
+		VALUE "CompanyName", "SDFX Grupe"
+		VALUE "LegalCopyright", "GPL-3.0 license"
+		VALUE "ProductName", "Platform"
+		VALUE "FileVersion", "1.0"
+		VALUE "ProductVersion", "1.0"
+	}
+}
+
+BLOCK "VarFileInfo"
+{
+	VALUE "Translation", 0x0C0A 0x04B0  
+}
+}
 ```
 
 ## 📜 Changelog
