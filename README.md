@@ -189,6 +189,38 @@ All versions are saved in the folder C:/Games/Platform/version-(vID)
 
 The initial development version is a portable file, although it has the option to take a screenshot with F12; it's just saved along with the folder where the .exe file is located.
 
+## 👓 Recommendations
+
+Use Windows 10 21h2 or higher to achieve good stability across all versions
+
+## 💻 System Requirements
+
+Minimum:
+
+- OS: Windows 7 / 8 / 8.1 / 10 / 11 (64-bit)
+
+- Processor: Intel Core i3-12100 / AMD Ryzen 3 4100 or equivalent
+
+- Memory: 4 GB RAM
+
+- Graphics: Intel UHD Graphics 730 / AMD Radeon Graphics (Integrated)
+
+- Storage: 100 MB available space
+
+- Additional Notes: The game process utilizes approximately 700 MB of RAM.
+
+Recommended:
+
+- OS: Windows 10 / 11 (64-bit)
+
+- Processor: Intel Core i3-13100 / AMD Ryzen 5 4500
+
+- Memory: 8 GB RAM
+
+- Graphics: Intel UHD Graphics 750 or discrete GPU
+
+- Storage: 100 MB available space (SSD recommended)
+
 ## 📜 Changelog
 
 You can see the changes and versions in the file [CHANGELOG.md](CHANGELOG.md).
