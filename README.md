@@ -183,6 +183,12 @@ BLOCK "VarFileInfo"
 }
 ```
 
+## 🗿 Developer Notes
+
+All versions are saved in the folder C:/Games/Platform/version-(vID)
+
+The initial development version is a portable file, although it has the option to take a screenshot with F12; it's just saved along with the folder where the .exe file is located.
+
 ## 📜 Changelog
 
 You can see the changes and versions in the file [CHANGELOG.md](CHANGELOG.md).
