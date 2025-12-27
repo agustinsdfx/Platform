@@ -65,6 +65,8 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Google Antigravity
 
+- Python 3.12 (Use it to create launchers that modify the .exe)
+
 ## 📦 Instructions
 
 - How to get to the libraries
@@ -192,6 +194,8 @@ The initial development version is a portable file, although it has the option t
 ## 👓 Recommendations
 
 Use Windows 10 21h2 or higher to achieve good stability across all versions
+
+We recommend that if you are going to create tools that improve the gaming experience or modify the game without having to download another .exe, do it in Python since you have useful tools to modify the .exe and launch it in different ways.
 
 ## 💻 System Requirements
 
