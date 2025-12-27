@@ -9,7 +9,7 @@
 ![Architecture](https://img.shields.io/badge/Architecture-x64-blue)
 ![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen)
 
-An Open Source 2D Game Engine
+An Open Source 2D & 3D Game Engine
 
 ## 👨‍💻 Developers group
 
