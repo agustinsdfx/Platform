@@ -45,15 +45,11 @@ Windows  7, 8, 8.1, 10, 11 and later.
 
 My engine/game is only licensed for the code and its own sprites that come by default when you download the code or the compiled build.
 
-## 🛠️ Tools used
+## 🛠️ Everything that was used for the development of the game and the engine
+
+### Tools used
 
 - Nmake & VS 2026
-
-- Raylib
-
-- SDL3
-
-- C lang & C++
 
 - Git
 
@@ -62,6 +58,16 @@ My engine/game is only licensed for the code and its own sprites that come by de
 - Libresprite
 
 - Google Antigravity
+
+### Libraries used
+
+- SDL3
+
+- Raylib
+
+### Languages ​​used
+
+- C & C++
 
 ## 📦 Instructions
 
