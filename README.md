@@ -1,13 +1,8 @@
 # Platform Windows SDFX Engine 2D & 3D Raylib
 ![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-green.svg)
-![C](https://img.shields.io/badge/C-00599C?logo=c&logoColor=white)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?logo=c%2B%2B&logoColor=white)
 ![CMake](https://img.shields.io/badge/CMake-Required-blue?logo=cmake)
 ![NMake](https://img.shields.io/badge/NMake-Supported-lightgrey)
-![Visual Studio](https://img.shields.io/badge/Visual%20Studio-2026-purple?logo=visualstudio)
-![Architecture](https://img.shields.io/badge/Architecture-x64-blue)
-![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen)
 
 An Open Source 2D & 3D Game Engine
 
