@@ -59,6 +59,8 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Google Antigravity
 
+- Python 3.12.7
+
 ### Libraries used
 
 - SDL3
@@ -68,6 +70,8 @@ My engine/game is only licensed for the code and its own sprites that come by de
 ### Languages ​​used
 
 - C & C++
+
+-  Python
 
 ## 📦 Instructions
 
