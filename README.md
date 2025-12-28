@@ -47,7 +47,7 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 ## 🛠️ Tools used
 
-- Nmake & Visual Studio 2026
+- Nmake & VS 2026
 
 - Raylib
 
@@ -57,7 +57,7 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Git
 
-- CMake x64 4.2.1 for Windows
+- CMake
 
 - Libresprite
 
