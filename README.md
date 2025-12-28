@@ -68,8 +68,10 @@ My engine/game is only licensed for the code and its own sprites that come by de
 - How to get to the libraries
 
 ```
-git clone https://github.com/raysan5/raylib.git
+git clone --branch libs https://github.com/agustinsdfx/Platform.git
 ```
+
+Or you can also download the libs branch and add those libraries to your code.
 
 - How to build and compile it
 
