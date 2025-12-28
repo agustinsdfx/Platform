@@ -80,9 +80,22 @@ Or you can also download the libs branch and add those libraries to your code.
 
 - How to build and compile it
 
+Create the folder for the compilation
+
 ```
 cmake -S . -B ./build
-cmake --build ./build
+```
+
+- Compile in debug mode
+
+```
+cmake --build ./build --config Debug
+```
+
+- Compile in release mode
+
+```
+cmake --build ./build --config Release
 ```
 
 - Compile installer
