@@ -49,23 +49,19 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Nmake & Visual Studio 2026
 
-- Notepad ++
-
 - Raylib
+
+- SDL3
 
 - C lang & C++
 
-- Git & Github Desktop
+- Git
 
-- CMake x64 4.2.1
+- CMake x64 4.2.1 for Windows
 
-- .bat & .sh files
-
-- Libresprite / Aseprite
+- Libresprite
 
 - Google Antigravity
-
-- Python 3.12 (Use it to create launchers that modify the .exe)
 
 ## 📦 Instructions
 
