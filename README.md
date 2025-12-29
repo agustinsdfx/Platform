@@ -21,15 +21,13 @@ the Free Software Foundation, version 3.
 
 ## 📖 ABOUT
 
-Platform is a 2D game engine that allows you to customize the source code and port it to different platforms using CMake and NMAKE, with the Raylib graphics library and the C programming language.
+Platform is an open-source game engine that allows you to customize the source code and port it to different platforms using CMake, with the platform's graphics library and the C and C++ programming languages.
 
 By default, the game comes ported to the latest official version for Windows x64 devices from the GitHub repository: https://github.com/agustinsdfx/Platform-Windows-SDFX-Engine-Raylib
 
 ## ⚙ Supported Systems
 
-- Windows x64 platforms
-
-Windows  7, 8, 8.1, 10, 11 and later.
+- Linux x64 platforms
 
 ## 👥 Credits
 
@@ -52,6 +50,8 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Visual Studio Code
 
+- C/C++
+
 - Python 3.12.7
 
 ### Libraries used
@@ -66,6 +66,8 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Python
 
+- Shell
+
 ## 📦 Instructions
 
 - How to get to the libraries
@@ -78,37 +80,11 @@ Or you can also download the libs branch and add those libraries to your code.
 
 - How to build and compile it
 
-Create the folder for the compilation
-
-For OpenGL 3.3
-
-```
-cmake -S . -B ./build
-```
-
-For OpenGL 4.2
-
-```
-cmake -S . -B ./build -DGRAPHICS=GRAPHICS_API_OPENGL_42
-```
-
-- Compile in debug mode
-
-```
-cmake --build ./build --config Debug
-```
-
-- Compile in release mode
-
-```
-cmake --build ./build --config Release
-```
+To build and compile it, simply open the Compile.sh file.
 
 ## 🗿 Developer Notes
 
-All versions are saved in the folder C:/Games/Platform/version-(vID)
-
-The initial development version is a portable file, although it has the option to take a screenshot with F12; it's just saved along with the folder where the platform file is located.
+Nothing yet :(
 
 ## 👓 Recommendations
 
