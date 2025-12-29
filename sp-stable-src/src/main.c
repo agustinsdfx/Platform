@@ -361,7 +361,7 @@ int main(void) {
 
 	for (int i = 0; i < CONSOLE_HISTORY; i++) memset(consoleLog[i], 0, 128);
 
-	InitWindow(screenWidth, screenHeight, "SDFX Engine 2D - Cargando...");
+	InitWindow(screenWidth, screenHeight, "SDFX Engine - Cargando...");
 	InitAudioDevice();
 
 	SetTargetFPS(0);
@@ -377,7 +377,7 @@ int main(void) {
     else if (glVersion == RL_OPENGL_43) glText = "4.3";
     else if (glVersion == 4) glText = "4.x (Core)";
 
-	SetWindowTitle(TextFormat("Platform 1.2.0 - [SDFX Engine 2D] [OpenGL %s] [SDL3]", glText));
+	SetWindowTitle(TextFormat("Platform 1.2.0 - [SDFX Engine] [OpenGL %s] [SDL3]", glText));
 	AddConsoleLog(TextFormat("GPU: OpenGL %s inicializado correctamente", glText));
 
 	if (FileExists("images/player.png")) {
@@ -1082,7 +1082,7 @@ int main(void) {
 		if (isStarting) {
 			DrawRectangle(0, 0, screenWidth, screenHeight, (Color) { 15, 15, 15, 255 });
 
-			const char* startText = "SDFX Engine 2D - Inicializando...";
+			const char* startText = "SDFX Engine - Inicializando...";
 			int fontS = 30;
 			DrawText(startText, (screenWidth / 2) - (MeasureText(startText, fontS) / 2), (screenHeight / 2) - 20, fontS, WHITE);
 
