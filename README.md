@@ -80,8 +80,16 @@ Or you can also download the libs branch and add those libraries to your code.
 
 Create the folder for the compilation
 
+For OpenGL 3.3
+
 ```
 cmake -S . -B ./build
+```
+
+For OpenGL 4.2
+
+```
+cmake -S . -B ./build -DGRAPHICS=GRAPHICS_API_OPENGL_42
 ```
 
 - Compile in debug mode
