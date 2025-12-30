@@ -537,7 +537,7 @@ int main(void) {
 			helpTimer += GetFrameTime();
 
 			if (helpTimer >= 2.0f) {
-				OpenURL("https://github.com/tu_usuario/tu_repo/blob/main/HELP.md");
+				OpenURL("https://github.com/agustinsdfx/Platform/blob/main/HELP.md");
 				isOpeningHelp = false;
 				gamePaused = false;
 				AddConsoleLog("Navegador abierto.");
