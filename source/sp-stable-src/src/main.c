@@ -537,10 +537,10 @@ int main(void) {
 			helpTimer += GetFrameTime();
 
 			if (helpTimer >= 2.0f) {
-				OpenURL("https://github.com/agustinsdfx/Platform/blob/main/HELP.md");
+				OpenURL("https://github.com/agustinsdfx/Platform/blob/main/doc/HELP.md");
 				isOpeningHelp = false;
 				gamePaused = false;
-				AddConsoleLog("Navegador abierto.");
+				AddConsoleLog("Abriendo documentación de los controles...");
 			}
 		}
 
@@ -1006,7 +1006,7 @@ int main(void) {
 			DrawText("HELP", (int)btnHelp.x + ((btnWidth - textWidthHelp) / 2), (int)btnHelp.y + 7, 10, WHITE);
 
 			if (hoverHelp && click) {
-				OpenURL("https://github.com/tu_usuario/tu_repositorio/wiki");
+				OpenURL("https://github.com/agustinsdfx/Platform/blob/main/doc/CONSOLE.md");
 				AddConsoleLog("Abriendo documentación de la consola...");
 			}
 
