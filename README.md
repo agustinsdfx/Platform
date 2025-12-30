@@ -68,6 +68,8 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Shell
 
+- CMake
+
 ## 📦 Instructions
 
 - How to get to the libraries
