@@ -121,7 +121,15 @@ Recommended:
 
 ## 📜 Changelog
 
-You can see the changes and versions in the file [CHANGELOG.md](CHANGELOG.md).
+You can see the changes and versions in the file [CHANGELOG.md](doc/CHANGELOG.md).
+
+## 📜 Console documentation
+
+See the console documentation in the file [CONSOLE.md](doc/CONSOLE.md).
+
+## 📜 Console documentation
+
+See the help documentation in the file [HELP.md](doc/HELP.md).
 
 ## 🎨 Community and mods
 
