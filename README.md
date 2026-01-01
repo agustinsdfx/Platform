@@ -49,7 +49,7 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Visual Studio Code
 
-- C/C++
+- C Lang
 
 - Python 3.12.7
 
@@ -61,7 +61,7 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 ### Languages ​​used
 
-- C & C++
+- C Lang
 
 - Python
 
