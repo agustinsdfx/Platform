@@ -10,7 +10,6 @@ add_executable(${PROJECT_NAME}
     ${SOURCE_FILES}
 )
 
-# Raylib
 add_subdirectory(raylib)
 target_link_libraries(${PROJECT_NAME}
     raylib
@@ -19,4 +18,3 @@ target_link_libraries(${PROJECT_NAME}
     dl
     X11
 )
-
