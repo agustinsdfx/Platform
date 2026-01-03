@@ -5,11 +5,11 @@
 
 An Open Source 2D & 3D Game Engine
 
-## 👨‍💻 Developers group
+### 👨‍💻 Developers group
 
 SDFX Grupe
 
-## ⚖️ LICENSE
+### ⚖️ LICENSE
 
 Platform
 Copyright (C) 2025 agustinsdfx
@@ -18,17 +18,17 @@ This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, version 3.
 
-## 📖 ABOUT
+### 📖 ABOUT
 
 Platform is an open-source game engine that allows you to customize the source code and port it to different platforms using CMake, with the platform's graphics library and the C and C++ programming languages.
 
 By default, the game comes ported to the latest official version for Windows x64 devices from the GitHub repository: https://github.com/agustinsdfx/Platform-Windows-SDFX-Engine-Raylib
 
-## ⚙ Supported Systems
+### ⚙ Supported Systems
 
 - Linux x64 platforms
 
-## 👥 Credits
+### 👥 Credits
 
 - Toby Fox (the original creator of the Undertale music; I don't have the licenses, but the songs are optional and you can replace them with others)
 - Creators of Raylib and SDL
@@ -36,9 +36,9 @@ By default, the game comes ported to the latest official version for Windows x64
 
 My engine/game is only licensed for the code and its own sprites that come by default when you download the code or the compiled build.
 
-## 🛠️ Everything that was used for the development of the game and the engine
+### 🛠️ Everything that was used for the development of the game and the engine
 
-### Tools used
+#### Tools used
 
 - Git
 
@@ -54,13 +54,13 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Gnome Notepad
 
-### Libraries used (Sources)
+#### Libraries used (Sources)
 
 - SDL3
 
 - Raylib
 
-### Languages ​​used
+#### Languages ​​used
 
 - C Lang
 
@@ -72,9 +72,9 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Git
 
-## 📦 Instructions
+### 📦 Instructions
 
-- How to get to the sources
+#### How to get to the sources
 
 ```
 git clone --branch sources https://github.com/agustinsdfx/Platform.git
@@ -82,21 +82,21 @@ git clone --branch sources https://github.com/agustinsdfx/Platform.git
 
 Or you can also download the "sources" branch and add those sources to your code.
 
-- How to build and compile it
+#### How to build and compile it
 
 To build and compile it, simply open the Compile.sh file.
 
-## 🗿 Developer Notes
+### 🗿 Developer Notes
 
 Nothing yet :(
 
-## 👓 Recommendations
+### 👓 Recommendations
 
 Nothing yet :(
 
-## 💻 System Requirements
+### 💻 System Requirements
 
-Minimum:
+#### Minimum:
 
 - OS: Linux (64-bit)
 
@@ -108,7 +108,7 @@ Minimum:
 
 - Storage: 100 MB available space
 
-Recommended:
+#### Recommended:
 
 - OS: Linux (64-bit)
 
@@ -120,19 +120,19 @@ Recommended:
 
 - Storage: 100 MB available space (SSD recommended)
 
-## 📜 Changelog
+### 📜 Changelog
 
 You can see the changes and versions in the file [CHANGELOG.md](doc/CHANGELOG.md).
 
-## 📜 Console documentation
+### 📜 Console documentation
 
 See the console documentation in the file [CONSOLE.md](doc/CONSOLE.md).
 
-## ❓ Help
+### ❓ Help
 
 See the help in the file [HELP.md](doc/HELP.md).
 
-## 🎨 Community and mods
+### 🎨 Community and mods
 
 Visit Platform DB (PL.DB) to download mods, games, textures, and more, as well as view the community forum.
 
