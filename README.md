@@ -71,13 +71,13 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 ## 📦 Instructions
 
-- How to get to the libraries
+- How to get to the sources
 
 ```
-git clone --branch libs https://github.com/agustinsdfx/Platform.git
+git clone --branch sources https://github.com/agustinsdfx/Platform.git
 ```
 
-Or you can also download the libs branch and add those libraries to your code.
+Or you can also download the "sources" branch and add those sources to your code.
 
 - How to build and compile it
 
@@ -127,15 +127,15 @@ You can see the changes and versions in the file [CHANGELOG.md](doc/CHANGELOG.md
 
 See the console documentation in the file [CONSOLE.md](doc/CONSOLE.md).
 
-## 📜 Console documentation
+## ❓ Help
 
-See the help documentation in the file [HELP.md](doc/HELP.md).
+See the help in the file [HELP.md](doc/HELP.md).
 
 ## 🎨 Community and mods
 
 Visit Platform DB (PL.DB) to download mods, games, textures, and more, as well as view the community forum.
 
-Check it out: https://agustinsdfx.github.io/PlatformDB/
+Check it out: [PlatformDB](https://agustinsdfx.github.io/Platform/)
 
 # End of README.md
 
