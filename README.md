@@ -74,14 +74,6 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 ### 📦 Instructions
 
-#### How to get to the sources
-
-```
-git clone --branch sources https://github.com/agustinsdfx/Platform.git
-```
-
-Or you can also download the "sources" branch and add those sources to your code.
-
 #### How to build and compile it
 
 To build and compile it, simply open the Compile.sh file.
