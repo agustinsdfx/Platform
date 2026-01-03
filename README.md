@@ -108,8 +108,6 @@ Minimum:
 
 - Storage: 100 MB available space
 
-- Additional Notes: The game process utilizes approximately 700 MB of RAM.
-
 Recommended:
 
 - OS: Linux (64-bit)
