@@ -137,6 +137,4 @@ Visit Platform DB (PL.DB) to download mods, games, textures, and more, as well a
 
 Check it out: [PlatformDB](https://agustinsdfx.github.io/Platform/)
 
-# End of README.md
-
-Thank you for reading this and learning about my platform game and its features.
+### End of README.md
