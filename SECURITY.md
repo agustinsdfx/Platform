@@ -1,11 +1,11 @@
-# Security Policy
+### Security Policy
 
-## Supported Versions
+#### Supported Versions
 
 We only support the latest stable version for security issues.
 See the [releases page](https://github.com/agustinsdfx/Platform/releases).
 
-## Reporting a Vulnerability
+#### Reporting a Vulnerability
 
 Please report any vulnerabilities privately by contacting a core developer so we can fix them. You can do this by sending an email to the following address:
 
