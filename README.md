@@ -30,10 +30,9 @@ By default, the game comes ported to the latest official version for Windows x64
 
 ## 👥 Credits
 
-- -Toby Fox (the original creator of the Undertale music; I don't have the licenses, but the songs are optional and you can replace them with others)
-- -Creators of Raylib (creators of the graphics library, sound, etc.)
-- -Creator of Inno Setup
-- -Messiah sound creators (The original "oof" death sound in my game was taken from the game Messiah. I don't own the rights to it, but having that sound is optional; you can replace it with one of your choice.)
+- Toby Fox (the original creator of the Undertale music; I don't have the licenses, but the songs are optional and you can replace them with others)
+- Creators of Raylib and SDL
+- Messiah sound creators (The original "oof" death sound in my game was taken from the game Messiah. I don't own the rights to it, but having that sound is optional; you can replace it with one of your choice.)
 
 My engine/game is only licensed for the code and its own sprites that come by default when you download the code or the compiled build.
 
@@ -53,7 +52,9 @@ My engine/game is only licensed for the code and its own sprites that come by de
 
 - Python 3.12.7
 
-### Libraries used
+- Gnome Notepad
+
+### Libraries used (Sources)
 
 - SDL3
 
@@ -68,6 +69,8 @@ My engine/game is only licensed for the code and its own sprites that come by de
 - Shell
 
 - CMake
+
+- Git
 
 ## 📦 Instructions
 
