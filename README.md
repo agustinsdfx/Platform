@@ -1,4 +1,4 @@
-# ⚖️ LICENSE
+### ⚖️ LICENSE
 
 Platform
 Copyright (C) 2025 agustinsdfx
