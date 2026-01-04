@@ -3,6 +3,8 @@
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-green.svg)
 ![CMake](https://img.shields.io/badge/CMake-Required-blue?logo=cmake)
 
+### Platform is back active 🎉🎉🥳
+
 An Open Source 2D & 3D Game Engine
 
 ### 👨‍💻 Developers group
