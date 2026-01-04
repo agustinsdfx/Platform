@@ -378,7 +378,7 @@ int main(void) {
     else if (glVersion == 4) glText = "4.x (Core)";
 
 	SetWindowTitle(TextFormat("Platform 1.2.0 - [SDFX Engine] [OpenGL %s] [SDL3]", glText));
-	AddConsoleLog(TextFormat("GPU: OpenGL %s inicializado correctamente", glText));
+	AddConsoleLog(TextFormat("GPU: OpenGL %s initialized correctly", glText));
 
 	if (FileExists("images/player.png")) {
 		playerTexture = LoadTexture("images/player.png");
@@ -472,8 +472,6 @@ int main(void) {
 
 	float previewTimer = 0.0f;
 	bool showControls = false;
-	bool isOpeningHelp = false;
-	float helpTimer = 0.0f;
 	bool isStarting = true;
 	float startTimer = 0.0f;
 	bool showStats = false;
@@ -511,7 +509,7 @@ int main(void) {
 			if (startTimer >= 3.0f) {
 				isStarting = false;
 				gamePaused = false;
-				AddConsoleLog("Sistema cargado. Bienvenido.");
+				AddConsoleLog("System loaded. Welcome.");
 			}
 		}
 
@@ -520,31 +518,10 @@ int main(void) {
 		}
 
 		if (IsKeyPressed(KEY_F1)) {
-			isOpeningHelp = true;
-			gamePaused = true;
-			helpTimer = 0.0f;
-			AddConsoleLog("Abriendo HELP.md...");
-		}
+            AddConsoleLog("HELP: https://github.com/agustinsdfx/Platform/blob/main/doc/HELP.md");
+        }
 
-		if (isOpeningHelp) {
-			if (IsKeyPressed(KEY_BACKSPACE)) {
-				isOpeningHelp = false;
-				gamePaused = false;
-				helpTimer = 0.0f;
-				AddConsoleLog("Cancelado por usuario.");
-			}
-
-			helpTimer += GetFrameTime();
-
-			if (helpTimer >= 2.0f) {
-				OpenURL("https://github.com/agustinsdfx/Platform/blob/main/doc/HELP.md");
-				isOpeningHelp = false;
-				gamePaused = false;
-				AddConsoleLog("Abriendo documentación de los controles...");
-			}
-		}
-
-		if (IsKeyPressed(KEY_P) && !isOpeningHelp) {
+		if (IsKeyPressed(KEY_P)) {
 			gamePaused = !gamePaused;
 			if (gamePaused) AddConsoleLog("GAME PAUSED");
 			else AddConsoleLog("GAME RESUMED");
@@ -607,7 +584,7 @@ int main(void) {
 
 					camera.offset = (Vector2){ screenWidth / 2.0f, screenHeight / 2.0f };
 
-					AddConsoleLog("Fullscreen: Cámara re-centrada");
+					AddConsoleLog("Fullscreen");
 				}
 				else {
 					ClearWindowState(FLAG_WINDOW_UNDECORATED);
@@ -621,7 +598,7 @@ int main(void) {
 
 					camera.offset = (Vector2){ screenWidth / 2.0f, screenHeight / 2.0f };
 
-					AddConsoleLog("Ventana: Cámara re-centrada");
+					AddConsoleLog("Ventana");
 				}
 			}
 
@@ -1006,8 +983,7 @@ int main(void) {
 			DrawText("HELP", (int)btnHelp.x + ((btnWidth - textWidthHelp) / 2), (int)btnHelp.y + 7, 10, WHITE);
 
 			if (hoverHelp && click) {
-				OpenURL("https://github.com/agustinsdfx/Platform/blob/main/doc/CONSOLE.md");
-				AddConsoleLog("Abriendo documentación de la consola...");
+				AddConsoleLog("DOCS: https://github.com/agustinsdfx/Platform/blob/main/doc/CONSOLE.md");
 			}
 
 			int wheel = (int)GetMouseWheelMove();
@@ -1047,12 +1023,12 @@ int main(void) {
 			}
 
 			if (consoleScroll > 0) {
-				DrawText("^ HISTORIAL ^", cWidth - 100, cHeight - 20, 10, YELLOW);
+				DrawText("^ HISTORY ^", cWidth - 100, cHeight - 20, 10, YELLOW);
 			}
 		}
 
-		if (gamePaused && !isOpeningHelp) {
-			const char* pauseText = "JUEGO PAUSADO";
+		if (gamePaused) {
+			const char* pauseText = "GAME PAUSED";
 			int fontSize = 50;
 			int textW = MeasureText(pauseText, fontSize);
 			int textX = screenWidth / 2 - textW / 2;
@@ -1062,27 +1038,10 @@ int main(void) {
 			DrawText(pauseText, textX, textY, fontSize, RED);
 		}
 
-		if (isOpeningHelp) {
-			DrawRectangle(0, 0, screenWidth, screenHeight, Fade(BLACK, 0.85f));
-
-			const char* textHelp = "Abriendo HELP.md en github";
-			int fontSizeHelp = 30;
-			int textW = MeasureText(textHelp, fontSizeHelp);
-			DrawText(textHelp, (screenWidth / 2) - (textW / 2), (screenHeight / 2) - (fontSizeHelp / 2), fontSizeHelp, WHITE);
-
-			int barWidth = 300;
-			DrawRectangle((screenWidth / 2) - (barWidth / 2), (screenHeight / 2) + 40, barWidth, 4, GRAY);
-			DrawRectangle((screenWidth / 2) - (barWidth / 2), (screenHeight / 2) + 40, (int)(barWidth * (helpTimer / 2.0f)), 4, GREEN);
-
-			const char* cancelText = "Presiona [RETROCESO] para cancelar";
-			int cancelW = MeasureText(cancelText, 10);
-			DrawText(cancelText, (screenWidth / 2) - (cancelW / 2), (screenHeight / 2) + 60, 10, RED);
-		}
-
 		if (isStarting) {
 			DrawRectangle(0, 0, screenWidth, screenHeight, (Color) { 15, 15, 15, 255 });
 
-			const char* startText = "SDFX Engine - Inicializando...";
+			const char* startText = "SDFX Engine - Initializing...";
 			int fontS = 30;
 			DrawText(startText, (screenWidth / 2) - (MeasureText(startText, fontS) / 2), (screenHeight / 2) - 20, fontS, WHITE);
 
@@ -1090,7 +1049,7 @@ int main(void) {
 			DrawRectangle((screenWidth / 2) - (bW / 2), (screenHeight / 2) + 40, bW, 6, DARKGRAY);
 			DrawRectangle((screenWidth / 2) - (bW / 2), (screenHeight / 2) + 40, (int)(bW * (startTimer / 3.0f)), 6, GREEN);
 
-			DrawText("Cargando texturas y sonidos...", (screenWidth / 2) - 70, (screenHeight / 2) + 60, 10, GRAY);
+			DrawText("Loading textures and sounds...", (screenWidth / 2) - 70, (screenHeight / 2) + 60, 10, GRAY);
 		}
 
 		if (hasCursorTexture) {
