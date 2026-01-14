@@ -82,6 +82,4 @@ See the console documentation in the file [CONSOLE.md](doc/CONSOLE.md).
 
 See the help in the file [HELP.md](doc/HELP.md).
 
-### 🎨 [Community](https://agustinsdfx.github.io/Platform/)
-
 ### End of README.md
