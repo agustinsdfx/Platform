@@ -36,9 +36,9 @@ We added a flag that represents Venezuela; this is not a mockery, it is a symbol
 
 To compile, the following libraries are needed:
 
-- Raylib 5.5
+- Raylib 5.5 (For the game code)
 
-- SDL3.4.0
+- SDL3.4.0 (For the launcher code)
 
 ### 👓 Recommendations
 
