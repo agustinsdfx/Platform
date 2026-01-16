@@ -881,7 +881,7 @@ int main(void) {
 
 			if (showStats) {
 				DrawText("Version: 1.2.1 OFFICIAL RELEASE | Release vID 07.01.2026", 10, screenHeight - 60, 20, BLUE);
-				DrawText(TextFormat("Desarrollado por AGUSTINSDFX | Build x86_64b - C - SDFX Engine - OpenGL Version: %s - SDL", glText) , 10, screenHeight - 35, 10, BLUE);
+				DrawText(TextFormat("Desarrollado por AGUSTINSDFX | Build x86_64 - C - SDFX Engine - OpenGL Version: %s", glText) , 10, screenHeight - 35, 10, BLUE);
 			}
 
 			if (showDebug) {
